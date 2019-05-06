@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./main.css">
+</head>
+<body>
+    <div class="stn">
+        <div class="box">
+            <li class="item1"></li>
+            <li class="item2"></li>
+            <li class="item3"></li>
+            <li class="item4"></li>
+            <li class="item5"></li>
+        </div>
+        <div class="control">
+            <span><i class="fa fa-arrow-left"></i></span>
+            <span><i class="fa fa-arrow-right"></i></span>
+        </div>
+    </div>
+    <script>
+        var stn=document.querySelector('.stn')
+        var box=document.querySelector('.stn .box')
+        function nextPic(){
+            var lis =document.querySelectorAll('.stn .box li')
+
+            lis[0].style.marginLeft='-500px'
+
+            setTimeout(function()  {
+                box.appendChild(lis[0])
+                lis[0].style.marginLeft='0'
+            }, 1000);
+        }
+
+        document.querySelectorAll('.stn .control span')[1].onclick=function(){
+            nextPic()
+        }
+
+        function lastPic(){
+            var lis=document.querySelectorAll('.stn .box li')
+            lis[lis.length-1].style.marginLeft='-500px'
+            box.insertBefore(lis[lis.length-1],lis[0])
+            setTimeout(function()  {
+                lis[lis.length-1].style.marginLeft='0'
+            }, 10);
+        }
+        document.querySelectorAll('.stn .control span')[0].onclick=function(){
+            lastPic()
+        }
+
+        var interval=setInterval(nextPic,3000)
+        stn.onmouseover=function(){
+            clearInterval(interval)
+        }
+        
+        stn.onmouseout=function(){
+            interval=setInterval(nextPic,3000)
+        }
+    </script>
+</body>
+</html>

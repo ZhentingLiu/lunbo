@@ -1,0 +1,68 @@
+.stn {
+  width: 500px;
+  margin: 0 auto;
+  background: lightblue;
+  overflow: hidden;
+  position: relative;
+}
+.stn .box {
+  width: 2500px;
+  overflow: hidden;
+  transition: all 1s;
+}
+.stn .box li {
+  text-align: center;
+  list-style: none;
+  width: 500px;
+  height: 300px;
+  float: left;
+  line-height: 300px;
+  transition: 1s;
+  background-size: cover;
+}
+.stn .box li.item1 {
+  background: url(a1.png);
+  background-size: cover;
+}
+.stn .box li.item2 {
+  background: url(a2.png);
+  background-size: cover;
+}
+.stn .box li.item3 {
+  background: url(a3.png);
+  background-size: cover;
+}
+.stn .box li.item4 {
+  background: url(a4.png);
+  background-size: cover;
+}
+.stn .box li.item5 {
+  background: url(a5.png);
+  background-size: cover;
+}
+.stn .box li i {
+  font-size: 48px;
+}
+.stn .control span {
+  position: absolute;
+  top: 50%;
+  background: none;
+  line-height: 40px;
+  padding: 0 20px;
+  margin-top: -20px;
+  color: black;
+  transition: all 0.3s;
+  width: 15px;
+}
+.stn .control span:first-child {
+  left: -70px;
+}
+.stn .control span:last-child {
+  right: -70px;
+}
+.stn:hover .control span:first-child {
+  left: 0px;
+}
+.stn:hover .control span:last-child {
+  right: 0px;
+}
